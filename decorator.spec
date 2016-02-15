@@ -4,7 +4,7 @@
 #
 Name     : decorator
 Version  : 4.0.5
-Release  : 17
+Release  : 18
 URL      : https://pypi.python.org/packages/source/d/decorator/decorator-4.0.5.tar.gz
 Source0  : https://pypi.python.org/packages/source/d/decorator/decorator-4.0.5.tar.gz
 Summary  : Better living through Python with decorators
