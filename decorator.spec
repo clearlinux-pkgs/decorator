@@ -4,7 +4,7 @@
 #
 Name     : decorator
 Version  : 4.0.11
-Release  : 29
+Release  : 30
 URL      : http://pypi.debian.net/decorator/decorator-4.0.11.tar.gz
 Source0  : http://pypi.debian.net/decorator/decorator-4.0.11.tar.gz
 Summary  : Better living through Python with decorators
