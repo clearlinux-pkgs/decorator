@@ -4,12 +4,13 @@
 #
 Name     : decorator
 Version  : 4.0.11
-Release  : 31
+Release  : 32
 URL      : http://pypi.debian.net/decorator/decorator-4.0.11.tar.gz
 Source0  : http://pypi.debian.net/decorator/decorator-4.0.11.tar.gz
 Summary  : Better living through Python with decorators
 Group    : Development/Tools
 License  : BSD-2-Clause
+Requires: decorator-legacypython
 Requires: decorator-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -20,9 +21,18 @@ BuildRequires : setuptools
 %description
 =================
 
+%package legacypython
+Summary: legacypython components for the decorator package.
+Group: Default
+
+%description legacypython
+legacypython components for the decorator package.
+
+
 %package python
 Summary: python components for the decorator package.
 Group: Default
+Requires: decorator-legacypython
 
 %description python
 python components for the decorator package.
@@ -36,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503086984
+export SOURCE_DATE_EPOCH=1505001847
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -46,7 +56,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python3.6/site-packages python3 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1503086984
+export SOURCE_DATE_EPOCH=1505001847
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -57,7 +67,10 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
