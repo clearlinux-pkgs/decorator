@@ -4,7 +4,7 @@
 #
 Name     : decorator
 Version  : 4.3.0
-Release  : 49
+Release  : 50
 URL      : https://files.pythonhosted.org/packages/6f/24/15a229626c775aae5806312f6bf1e2a73785be3402c0acdec5dbddd8c11e/decorator-4.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/6f/24/15a229626c775aae5806312f6bf1e2a73785be3402c0acdec5dbddd8c11e/decorator-4.3.0.tar.gz
 Summary  : Better living through Python with decorators
@@ -13,10 +13,7 @@ License  : BSD-2-Clause
 Requires: decorator-python3
 Requires: decorator-license
 Requires: decorator-python
-BuildRequires : pbr
-BuildRequires : pip
-BuildRequires : python3-dev
-BuildRequires : setuptools
+BuildRequires : buildreq-distutils3
 
 %description
 =================
@@ -55,7 +52,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530326628
+export SOURCE_DATE_EPOCH=1536550224
 python3 setup.py build -b py3
 
 %check
