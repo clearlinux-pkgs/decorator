@@ -1,8 +1,16 @@
 # This file contains recursive sources that require this package
+cinder
 dogpile.cache
 ipython
 jsonpath-rw
 mxnet
 networkx
+neutron
+nova
+openstacksdk
+python-magnumclient
+python-slip
 pytools
 retry
+sqlalchemy-migrate
+traitlets
