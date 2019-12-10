@@ -4,7 +4,7 @@
 #
 Name     : decorator
 Version  : 4.4.1
-Release  : 58
+Release  : 59
 URL      : https://files.pythonhosted.org/packages/dc/c3/9d378af09f5737cfd524b844cd2fbb0d2263a35c11d712043daab290144d/decorator-4.4.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/dc/c3/9d378af09f5737cfd524b844cd2fbb0d2263a35c11d712043daab290144d/decorator-4.4.1.tar.gz
 Summary  : Decorators for Humans
@@ -17,14 +17,30 @@ BuildRequires : buildreq-distutils3
 BuildRequires : util-linux
 
 %description
-Decorators for Humans
 =====================
-The goal of the decorator module is to make it easy to define
-signature-preserving function decorators and decorator factories.
-It also includes an implementation of multiple dispatch and other niceties
-(please check the docs). It is released under a two-clauses
-BSD license, i.e. basically you can do whatever you want with it but I am not
-responsible.
+        
+        The goal of the decorator module is to make it easy to define
+        signature-preserving function decorators and decorator factories.
+        It also includes an implementation of multiple dispatch and other niceties
+        (please check the docs). It is released under a two-clauses
+        BSD license, i.e. basically you can do whatever you want with it but I am not
+        responsible.
+        
+        Installation
+        -------------
+        
+        If you are lazy, just perform
+        
+         ``$ pip install decorator``
+        
+        which will install just the module on your system.
+        
+        If you prefer to install the full distribution from source, including
+        the documentation, clone the `GitHub repo`_ or download the tarball_, unpack it and run
+        
+         ``$ pip install .``
+        
+        in the main directory, possibly as superuser.
 
 %package license
 Summary: license components for the decorator package.
@@ -54,14 +70,14 @@ python3 components for the decorator package.
 
 %prep
 %setup -q -n decorator-4.4.1
+cd %{_builddir}/decorator-4.4.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572185448
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576009415
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -74,7 +90,7 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test || :
+PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])") python setup.py test || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
