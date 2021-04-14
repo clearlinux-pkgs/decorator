@@ -1,5 +1,5 @@
 PKG_NAME := decorator
-URL = https://files.pythonhosted.org/packages/6a/aa/c194bd2fb168c1ebd8ffbfc12d972d09a9df0e4d485013e5ba2c8e4f1f05/decorator-5.0.6.tar.gz
+URL = https://files.pythonhosted.org/packages/a9/09/dd085a8afcf48fdaba851fe10956d5dbf1e9091206f7ca717223563f75c2/decorator-5.0.7.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
