@@ -4,7 +4,7 @@
 #
 Name     : decorator
 Version  : 5.0.7
-Release  : 73
+Release  : 74
 URL      : https://files.pythonhosted.org/packages/a9/09/dd085a8afcf48fdaba851fe10956d5dbf1e9091206f7ca717223563f75c2/decorator-5.0.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a9/09/dd085a8afcf48fdaba851fe10956d5dbf1e9091206f7ca717223563f75c2/decorator-5.0.7.tar.gz
 Summary  : Decorators for Humans
