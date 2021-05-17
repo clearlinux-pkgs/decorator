@@ -5,4 +5,5 @@ mxnet
 networkx
 python-slip
 retry
+spyder-kernels
 traitlets
