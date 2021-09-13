@@ -1,8 +1,9 @@
 # This file contains recursive sources that require this package
 Cura
+gssapi
+ipdb
 ipython
 mxnet
-networkx
 python-slip
 retry
 spyder-kernels
